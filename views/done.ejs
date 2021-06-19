@@ -1,0 +1,47 @@
+<html>
+    <title><%=title%></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+    body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  background-color: whitesmoke;
+}
+.container {
+  max-width: 700px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 2%;
+}
+</style>
+<body style="margin-top: 100;">
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black">
+          <div class="w3-col s3">
+            <a href="/" class="w3-button w3-block w3-black">HOME</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/see" class="w3-button w3-block w3-black">SEE YOUR RESERVATION</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/cancel" class="w3-button w3-block w3-black">CANCEL RESERVATION</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/review" class="w3-button w3-block w3-black">REVIEWS</a>
+          </div>
+        </div>
+      </div>
+    <div class="w3-content" style="max-width:700px;">
+            <p><span class="w3-tag">NOTICE!</span></p>
+            <p>Your Boooking details are as follow:</p>
+            <div class="container" id="reviews">
+                <p>YOUR BOOKING HAS DONE SUCCESSEFULLY<br>AT <%=date%> for <%=ppl%> people</p>
+                <p>THANKYOU</p>
+            </div>
+        </div>
+      </div>
+    </body>
+</html>

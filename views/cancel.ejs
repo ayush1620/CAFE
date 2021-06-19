@@ -1,0 +1,42 @@
+<html>
+    <title><%=title%></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+  body, html {
+height: 100%;
+background-color: whitesmoke;
+}
+</style>
+<body style="margin-top: 100;">
+  <div class="w3-top" style=" font-family: 'Inconsolata', sans-serif;">
+    <div class="w3-row w3-padding w3-black">
+      <div class="w3-col s3">
+        <a href="/" class="w3-button w3-block w3-black">HOME</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/see" class="w3-button w3-block w3-black">SEE YOUR RESERVATION</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/cancel" class="w3-button w3-block w3-black">CANCEL RESERVATION</a>
+      </div>
+      <div class="w3-col s3">
+        <a href="/review" class="w3-button w3-block w3-black">REVIEWS</a>
+      </div>
+    </div>
+  </div>
+        <div class="w3-content" style="max-width:700px">
+            <p><strong>Please</strong> fill up this form to cancel the Reservation:</p>
+            <form action="/delete" method="POST">
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+              <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Reason for Cancellation" required name="Message"></p>
+              <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="Contact number" required name="Number"></p>
+              <p><input class="w3-input w3-padding-16 w3-border" type="password" placeholder="Enter Your Temporary Passcode" required name="password"></p>
+              <p><button class="w3-button w3-black" type="submit">CANCEL YOUR RESERVATION</button></p>
+            </form>
+        </div>
+      </div>
+      </body>
+</html>

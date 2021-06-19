@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  margin-top: 50px;
+  padding: 7px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  margin-top: 19px;
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+
+/* Add a card effect for articles */
+.card {
+   background-color: white;
+   padding: 20px;
+   margin-top: 20px;
+   border-radius: 2%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.form-container {
+  margin-top: 40px;
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 2%;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 7px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  margin-bottom:10px;
+  margin-left: 20%;
+  opacity: 0.8;
+  border-radius: 5%;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+    <div class="w3-top" style=" font-family: 'Inconsolata', sans-serif;">
+        <div class="w3-row w3-padding w3-black">
+          <div class="w3-col s3">
+            <a href="/" class="w3-button w3-block w3-black">HOME</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/see" class="w3-button w3-block w3-black">SEE YOUR RESERVATION</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/cancel" class="w3-button w3-block w3-black">CANCEL RESERVATION</a>
+          </div>
+          <div class="w3-col s3">
+            <a href="/review" class="w3-button w3-block w3-black">REVIEWS</a>
+          </div>
+        </div>
+      </div>
+
+<div class="header">
+  <h2>Reviews de Cafe</h2>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <% for (let i of rvs ) { %> 
+        <div class="card"> 
+                 <h2><%= i.heading %></h2>
+                 <h5>BY <%= i.name %>(<%= i.email %>) ON <%=i.createdAt%></h5>
+                 <p><%= i.Message %></p>
+         </div>
+     <% } %>
+  </div>
+  <div class="rightcolumn">
+    <div class="w3-container" id="reviews">
+        <div class="form-popup" id="myForm">
+          <form action="/type" method="POST" class="form-container">
+            <input type="text" placeholder="Enter Name" required name="name">
+            <input type="text" placeholder="Enter Email" required name="email">
+            <input type="text" placeholder="Review Heading" required name="heading">
+            <input type="text" placeholder="Describe Your Experience (optional)" name="review">
+      
+            <button type="submit" class="btn">Submit</button>
+          </form>
+        </div>
+    </div> 
+</div>
+
+</body>
+</html>
